@@ -1,6 +1,5 @@
 
 #include <GLFW\glfw3.h>
-
 #include <iostream>
 
 static int ortho = 0;
