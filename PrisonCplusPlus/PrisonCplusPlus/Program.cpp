@@ -2,6 +2,8 @@
 #include <GLFW\glfw3.h>
 #include <iostream>
 
+//yolo swaggings søren kan du se det her, det er grønt men du burde stadig kunne se det røde!
+
 static int ortho = 0;
 
 void size_resize_callback(GLFWwindow* window, int width, int height)
