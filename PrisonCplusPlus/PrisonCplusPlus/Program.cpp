@@ -1,8 +1,9 @@
 
 #include <GLFW\glfw3.h>
 #include <iostream>
+#include "GameObject.h"
 
-
+GameObject * gameObject;
 
 static int ortho = 0;
 
