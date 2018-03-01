@@ -1,9 +1,8 @@
 
 #include <GLFW\glfw3.h>
-
 #include <iostream>
 
-//yolo swaggings søren kan du se det her, det er grønt men du burde stadig kunne se det røde!..
+//Ja nej
 
 static int ortho = 0;
 
