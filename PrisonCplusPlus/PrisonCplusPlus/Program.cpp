@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-//yolo swaggings søren kan du se det her, det er grønt men du burde stadig kunne se det røde!
+//yolo swaggings søren kan du se det her, det er grønt men du burde stadig kunne se det røde!..
 
 static int ortho = 0;
 
