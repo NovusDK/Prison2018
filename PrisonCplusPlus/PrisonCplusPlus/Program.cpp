@@ -2,7 +2,7 @@
 #include <GLFW\glfw3.h>
 #include <iostream>
 
-//Ja nej
+//
 
 static int ortho = 0;
 
