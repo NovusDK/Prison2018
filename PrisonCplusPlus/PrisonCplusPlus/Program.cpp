@@ -2,8 +2,6 @@
 #include <GLFW\glfw3.h>
 #include <iostream>
 
-//Ja nej
-
 static int ortho = 0;
 
 void size_resize_callback(GLFWwindow* window, int width, int height)
@@ -26,7 +24,6 @@ void drawSquare()
 		xsize = 0;
 		for (int i = 0; i<10; i++)
 		{
-
 			glBegin(GL_POLYGON);
 
 			glVertex3f(-50.0 + xsize, -50.0 + ysize, 0.0);
