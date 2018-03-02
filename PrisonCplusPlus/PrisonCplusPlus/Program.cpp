@@ -1,8 +1,9 @@
 
 #include <GLFW\glfw3.h>
 #include <iostream>
+#include "GameObject.h"
 
-//Ja nej
+GameObject * gameObject;
 
 static int ortho = 0;
 
@@ -78,6 +79,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
 
 		drawSquare();
+
 
 		/*glBegin(GL_TRIANGLES);
 		glColor3f(1.0f, 0.0f, 0.0f);
