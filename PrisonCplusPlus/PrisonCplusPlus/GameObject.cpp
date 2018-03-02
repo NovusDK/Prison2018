@@ -10,11 +10,10 @@ GameObject::GameObject(float initX, float initY, float initZ)
 {
 	health = 10;
 	speed = 0.001;
+	direction = 1;
 	x = initX;
 	y = initY;
 	z = initZ;
-
-	direction = 1;
 }
 
 
@@ -24,7 +23,7 @@ GameObject::~GameObject()
 
 void GameObject::Update()
 {
-	x += speed;
+	x += direction * speed;
 }
 
 void GameObject::Render()
@@ -33,9 +32,9 @@ void GameObject::Render()
 	glTranslatef(x, y, z);
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.0f, 0.0f, 0.0f);
-	glVertex3f(-20.0f, 0.0f, 0.0f);
-	glVertex3f(0.0f, 20.0f, 0.0f);
-	glVertex3f(20.0f, 0.0f, 0.0f);
+	glVertex3f(-0.5f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 0.5f, 0.0f);
+	glVertex3f(0.5f, 0.0f, 0.0f);
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
 }

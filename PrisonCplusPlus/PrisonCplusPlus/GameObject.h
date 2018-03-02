@@ -11,11 +11,9 @@ private:
 public:
 	int health;
 	float speed;
-
 	GameObject();
 	GameObject(float initX, float initY, float initZ);
 	~GameObject();
-
 	void virtual Update();
 	void virtual Render();
 	int direction;
