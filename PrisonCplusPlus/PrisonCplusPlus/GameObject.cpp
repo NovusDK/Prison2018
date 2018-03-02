@@ -5,13 +5,13 @@
 GameObject::GameObject() : GameObject(health, speed, 0,0,0)
 {
 	health = 10;
-	speed = 100;
+	speed = 0.00001;
 }
 
 GameObject::GameObject(int health, float speed, float initX, float initY, float initZ)
 {
 	health = 10;
-	speed = 100;
+	speed = 0.00001;
 	x = initX;
 	y = initY;
 	z = initZ;

@@ -74,10 +74,14 @@ int main()
 
 	  //glClearColor(0.2f, 0.3f, 0.3f, 1.0f);  //Sætter baggrundfarven
 
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+		glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
 
 		drawSquare();
+		gameObject = new GameObject;
+		
+		gameObject;
+		
 
 		/*glBegin(GL_TRIANGLES);
 		glColor3f(1.0f, 0.0f, 0.0f);
