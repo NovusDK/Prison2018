@@ -13,6 +13,8 @@ GameObject::GameObject(float initX, float initY, float initZ)
 	x = initX;
 	y = initY;
 	z = initZ;
+
+	direction = 1;
 }
 
 
@@ -30,10 +32,10 @@ void GameObject::Render()
 	glPushMatrix(); //Lægger en matrise på stakken, således kun denne manipuleres
 	glTranslatef(x, y, z);
 	glBegin(GL_TRIANGLES);
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(-0.5f, 0.0f, 0.0f);
-	glVertex3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(0.5f, 0.0f, 0.0f);
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(-20.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 20.0f, 0.0f);
+	glVertex3f(20.0f, 0.0f, 0.0f);
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
 }
