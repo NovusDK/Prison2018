@@ -1,19 +1,17 @@
 #pragma once
 class GameObject
 {
-private:
-	
-	int health;
-	float speed;
-
+private:	
 	float x;
 	float y;
 	float z;
 
 public:
+	int health;
+	float speed;
 
 	GameObject();
-	GameObject(int health, float speed, float initX, float initY, float initZ);
+	GameObject(float initX, float initY, float initZ);
 	~GameObject();
 
 	void virtual Update();
