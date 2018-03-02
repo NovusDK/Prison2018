@@ -2,13 +2,21 @@
 #include <GLFW\glfw3.h>
 #include <iostream>
 
-GameWorld::GameWorld()
+GameWorld::GameWorld(GLFWwindow * windowContext)
 {
+	window = windowContext;
 }
 
 
 GameWorld::~GameWorld()
 {
+}
+
+void GameWorld::GameLoop()
+{
+	GameLogic();
+	Render();
+	glfwPollEvents();
 }
 
 void GameWorld::GameLogic()
@@ -18,18 +26,22 @@ void GameWorld::GameLogic()
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
-	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
-	{
-		direction = -1; // Gå til venstre
-	}
-	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
-	{
-		direction = 1; // Gå til højre
-	}
-	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-	{
+	//if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+	//{
+	//	direction = -1; // Gå til venstre
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+	//{
+	//	direction = 1; // Gå til højre
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+	//{
 
-	}
+	//}
 
 
+}
+
+void GameWorld::Render()
+{
 }

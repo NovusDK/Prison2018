@@ -1,12 +1,7 @@
 #include "GameObject.h"
 #include <GLFW\glfw3.h>
 
-#define UP    1
-#define DOWN  2
-#define LEFT  3
-#define RIGHT 4
 
-int direction = DOWN;
 
 GameObject::GameObject() : GameObject(health, speed, 0,0,0)
 {
@@ -41,9 +36,10 @@ void GameObject::Render()
 	glPushMatrix(); //Lægger en matrise på stakken, således kun denne manipuleres
 	glTranslatef(x, y, z);
 	glBegin(GL_TRIANGLES);
-	glVertex3f(-0.5f, 0.0f, 0.0f);
-	glVertex3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(0.5f, 0.0f, 0.0f);
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(-20.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 20.0f, 0.0f);
+	glVertex3f(20.0f, 0.0f, 0.0f);
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
 }
