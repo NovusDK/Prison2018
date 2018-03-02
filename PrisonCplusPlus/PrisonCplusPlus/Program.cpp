@@ -2,8 +2,12 @@
 #include <GLFW\glfw3.h>
 #include <iostream>
 #include "GameObject.h"
+#include "GameWorld.h"
+
 
 GameObject * gameObject;
+
+GameWorld * gw;
 
 static int ortho = 0;
 
@@ -16,6 +20,7 @@ void drawSquare()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
@@ -66,6 +71,8 @@ int main()
 
 	glfwSetFramebufferSizeCallback(window, size_resize_callback); //Sikre at hvis vinduets størrelse ændres ændres viewport også
 
+	gw = new GameWorld(window);
+	gameObject = new GameObject();
 
 
 	while (!glfwWindowShouldClose(window)) // Køre så længe glfw vinduet ikke har fået besked på at lukke (f.eks. tryk på X knappen)
@@ -81,6 +88,10 @@ int main()
 		gameObject = new GameObject;
 		
 		gameObject;
+		
+
+		gw->GameLoop();
+		gameObject->Render();
 		
 
 		/*glBegin(GL_TRIANGLES);

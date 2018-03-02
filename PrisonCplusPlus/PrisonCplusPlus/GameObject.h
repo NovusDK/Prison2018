@@ -1,4 +1,6 @@
 #pragma once
+
+#include <GLFW\glfw3.h>
 class GameObject
 {
 private:
@@ -18,5 +20,6 @@ public:
 
 	void virtual Update();
 	void virtual Render();
+	int direction;
 };
 
