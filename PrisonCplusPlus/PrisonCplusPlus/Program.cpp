@@ -85,11 +85,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
 
 		drawSquare();
-		gameObject = new GameObject;
 		
-		gameObject;
-		
-
 		gw->GameLoop();
 		gameObject->Render();
 		
