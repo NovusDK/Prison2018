@@ -23,19 +23,20 @@ void GameWorld::GameLoop()
 
 void GameWorld::GameLogic()
 {
-	gameObject->Update();
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) //Tjekker op på at ESC er trykket ned, hvis ja luk vinduet
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
-	//if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
-	//{
-	//	direction = -1; // Gå til venstre
-	//}
-	//if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
-	//{
-	//	direction = 1; // Gå til højre
-	//}
+	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+	{
+		gameObject->direction = -1; // Gå til venstre
+		gameObject->Update();
+	}
+	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+	{
+		gameObject->direction = 1; // Gå til højre
+		gameObject->Update();
+	}
 	//if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	//{
 
