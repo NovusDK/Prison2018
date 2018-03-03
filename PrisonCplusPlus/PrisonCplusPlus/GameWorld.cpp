@@ -6,11 +6,13 @@ GameWorld::GameWorld(GLFWwindow * windowContext)
 {
 	window = windowContext;
 	gameObject = new GameObject();
+	player = new Player();
 }
 
 GameWorld::~GameWorld()
 {
 	delete gameObject;
+	delete player;
 }
 
 void GameWorld::GameLoop()
@@ -37,10 +39,10 @@ void GameWorld::GameLogic()
 		gameObject->direction = 1; // Gå til højre
 		gameObject->Update();
 	}
-	//if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-	//{
+	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+	{
 
-	//}
+	}
 }
 
 void GameWorld::Render()
@@ -50,7 +52,8 @@ void GameWorld::Render()
 
 	glLoadIdentity(); //Null stiller OpenGL matris
 
-	gameObject->Render();
+	//gameObject->Render();
+	player->Render();
 
 	glfwSwapBuffers(window);
 }

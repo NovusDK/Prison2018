@@ -21,11 +21,13 @@ void drawSquare()
 	glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
 	glColor3f(1.0, 0.0, 0.0);
 	int xsize = 0, ysize = 0;
-	for (int j = 0; j < 10; j++)
+	for (int j = 0; j<10; j++)
 	{
+
 		xsize = 0;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i<10; i++)
 		{
+
 			glBegin(GL_POLYGON);
 
 			glVertex3f(-50.0 + xsize, -50.0 + ysize, 0.0);

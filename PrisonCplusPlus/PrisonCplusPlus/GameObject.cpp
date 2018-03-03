@@ -32,9 +32,9 @@ void GameObject::Render()
 	glTranslatef(x, y, z);
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.0f, 0.0f, 0.0f);
-	glVertex3f(-0.5f, 0.0f, 0.0f);
-	glVertex3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(0.5f, 0.0f, 0.0f);
+	glVertex3f(-0.05f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 0.1f, 0.0f);
+	glVertex3f(0.05f, 0.0f, 0.0f);
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
 }
