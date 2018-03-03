@@ -1,14 +1,6 @@
 #include "GameWorld.h"
+#include <GLFW\glfw3.h>
 
-void GameWorld::GameLoop()
-{
-	GameLogic();
-	Render();
-	glfwPollEvents();
-}
-
-void GameWorld::GameLogic()
-{
 
 GameWorld::GameWorld(GLFWwindow * windowContext)
 {
@@ -27,6 +19,11 @@ void GameWorld::GameLoop()
 	Render();
 	glfwPollEvents();
 }
+
+
+void GameWorld::GameLogic()
+{
+	gameObject->Update();
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) //Tjekker op på at ESC er trykket ned, hvis ja luk vinduet
 	{
 		glfwSetWindowShouldClose(window, true);
@@ -43,14 +40,9 @@ void GameWorld::GameLoop()
 	//{
 
 	//}
-
-
-void GameWorld::GameLogic()
-{
-	gameObject->Update();
 }
 
-GameWorld::~GameWorld()
+void GameWorld::Render()
 {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
