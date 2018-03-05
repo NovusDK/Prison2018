@@ -23,11 +23,9 @@ void drawSquare()
 	int xsize = 0, ysize = 0;
 	for (int j = 0; j<10; j++)
 	{
-
 		xsize = 0;
 		for (int i = 0; i<10; i++)
 		{
-
 			glBegin(GL_POLYGON);
 
 			glVertex3f(-50.0 + xsize, -50.0 + ysize, 0.0);
@@ -68,10 +66,10 @@ int main()
 	while (!glfwWindowShouldClose(window)) // Køre så længe glfw vinduet ikke har fået besked på at lukke (f.eks. tryk på X knappen)
 	{ //Her starter gameloop'et
 
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
+		//glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+		//glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
 		
-		drawSquare();
+		//drawSquare();
 
 		gw->GameLoop();
 

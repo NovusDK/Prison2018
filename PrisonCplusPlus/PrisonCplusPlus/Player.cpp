@@ -30,12 +30,14 @@ void Player::Update()
 void Player::Render()
 {
 	glPushMatrix(); //Lægger en matrise på stakken, således kun denne manipuleres
+	glBegin(GL_TRIANGLE_FAN);
 	glTranslatef(x, y, z);
-	glBegin(GL_LINE_LOOP);
-	glColor3f(0.0f, 0.0f, 0.0f);
-	for (int i = 0; i <= 100; i++)
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(x, y, z);
+	for (int i = 0; i <= 50; i++)
 	{
-		glVertex3f(cos(2 * 3.14159*i / 100.0), sin(2 * 3.14159*i / 100.0), 0);
+		glVertex3f(x + (0.2f * cos(i * (2.0f * 3.14159) / 50)),
+			y + (0.2f * sin(i * (2.0f * 3.14159) / 50)), 0);
 	}
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
