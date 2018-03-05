@@ -7,6 +7,7 @@ GameWorld::GameWorld(GLFWwindow * windowContext)
 	window = windowContext;
 	gameObject = new GameObject();
 	player = new Player();
+	grid = new Grid();
 }
 
 GameWorld::~GameWorld()
@@ -22,7 +23,6 @@ void GameWorld::GameLoop()
 	glfwPollEvents();
 }
 
-
 void GameWorld::GameLogic()
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) //Tjekker op på at ESC er trykket ned, hvis ja luk vinduet
@@ -31,13 +31,13 @@ void GameWorld::GameLogic()
 	}
 	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
 	{
-		gameObject->direction = -1; // Gå til venstre
-		gameObject->Update();
+		player->direction = -1; //Gå til venstre
+		player->Update();
 	}
 	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
 	{
-		gameObject->direction = 1; // Gå til højre
-		gameObject->Update();
+		player->direction = 1; //Gå til højre
+		player->Update();
 	}
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
@@ -53,6 +53,7 @@ void GameWorld::Render()
 	glLoadIdentity(); //Null stiller OpenGL matris
 
 	//gameObject->Render();
+	grid->Render();
 	player->Render();
 
 	glfwSwapBuffers(window);

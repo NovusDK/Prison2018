@@ -69,7 +69,7 @@ int main()
 		//glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		//glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
 		
-		//drawSquare();
+		drawSquare();
 
 		gw->GameLoop();
 

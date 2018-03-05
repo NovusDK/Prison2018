@@ -24,7 +24,7 @@ Player::~Player()
 
 void Player::Update()
 {
-
+	x += direction * speed;
 }
 
 void Player::Render()

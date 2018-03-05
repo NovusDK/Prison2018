@@ -4,5 +4,6 @@ class Grid
 public:
 	Grid();
 	~Grid();
+	void Render();
 };
 
