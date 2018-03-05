@@ -3,7 +3,7 @@
 
 
 
-Player::Player() : Player(0, 0, 1)
+Player::Player() : Player(0, 0, 0)
 {
 }
 
@@ -34,10 +34,10 @@ void Player::Render()
 	glTranslatef(x, y, z);
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glVertex3f(x, y, z);
-	for (int i = 0; i <= 50; i++)
+	for (int i = 0; i <= 385; i++)
 	{
-		glVertex3f(x + (0.060f * cos(i * (2.0f * 3.14159) / 50)),
-			y + (0.1f * sin(i * (2.0f * 3.14159) / 50)), 0);
+		glVertex3f(x + (0.060f * cos(i * (2.0f * 3.14159) / 385)),
+			y + (0.1f * sin(i * (2.0f * 3.14159) / 385)), 0);
 	}
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
