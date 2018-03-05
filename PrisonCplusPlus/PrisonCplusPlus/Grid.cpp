@@ -14,7 +14,7 @@ Grid::~Grid()
 void Grid::Render()
 {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	glPushMatrix();
 	//glMatrixMode(GL_PROJECTION);
@@ -34,6 +34,7 @@ void Grid::Render()
 			glVertex3f(-40.0 + xsize, -40.0 + ysize, 0.0);
 			glVertex3f(-50.0 + xsize, -40.0 + ysize, 0.0);
 			glEnd();
+			someArray[j][i] = (j + 1)*(i + 1);
 			xsize += 10.0;
 		}
 		ysize += 10.0;
