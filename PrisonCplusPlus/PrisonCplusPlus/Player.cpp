@@ -36,8 +36,8 @@ void Player::Render()
 	glVertex3f(x, y, z);
 	for (int i = 0; i <= 50; i++)
 	{
-		glVertex3f(x + (0.2f * cos(i * (2.0f * 3.14159) / 50)),
-			y + (0.2f * sin(i * (2.0f * 3.14159) / 50)), 0);
+		glVertex3f(x + (0.060f * cos(i * (2.0f * 3.14159) / 50)),
+			y + (0.1f * sin(i * (2.0f * 3.14159) / 50)), 0);
 	}
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)
