@@ -33,29 +33,30 @@ void Grid::Render()
 			glVertex3f(-40.0 + xsize, -40.0 + ysize, 0.0);
 			glVertex3f(-50.0 + xsize, -40.0 + ysize, 0.0);
 			glEnd();
-			//someArray[x][y] = (x + 1)*(y + 1);
 			xsize += 10.0;
 		}
 		ysize += 10.0;
 	}
 	glPopMatrix();
-	//glFlush();
+	RenderField();
 }
 
-//void Grid::RenderField()
-//{
-//	for (float * x : someArray)
-//	{
-//		for (float * y : someArray)
-//		{
-//			glPushMatrix();
-//			glColor3f(0.0f, 1.0f, 0.0f);
-//			glBegin(GL_POLYGON);
-//			glTranslatef(x, y, z);
-//			for (int i = 0; i <= 50; i++)
-//			{
-//
-//			}
-//		}
-//	}
-//}
+void Grid::AddGameObject(int x, int y, GameObject * g)
+{
+	someArray[x][y] = g;
+}
+
+void Grid::RenderField()
+{
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			if (someArray[i][j] != nullptr)
+			{
+				//glTranslatef(i, j, 0);
+				someArray[i][j]->Render();
+			}
+		}
+	}
+}

@@ -50,6 +50,15 @@ void GameWorld::GameLogic()
 		player->direction = -1;
 		player->UpdateTwo();
 	}
+
+	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
+	{
+		grid->AddGameObject(0, 0, new GameObject());
+	}
+	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
+	{
+		grid->AddGameObject(2, 2, new GameObject());
+	}
 }
 
 void GameWorld::Render()
