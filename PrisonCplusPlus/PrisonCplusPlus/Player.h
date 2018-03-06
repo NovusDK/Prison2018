@@ -11,6 +11,7 @@ public:
 	Player(float initX, float initY, float initZ);
 	~Player();
 	void Update();
+	void UpdateTwo();
 	void Render();
 };
 

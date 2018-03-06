@@ -2,10 +2,14 @@
 class Grid
 {
 private:
-	int someArray[10][10];
+	float x;
+	float y;
+	float z;
+	float someArray[10][10] = { };
 public:
 	Grid();
 	~Grid();
 	void Render();
+	void RenderField();
 };
 

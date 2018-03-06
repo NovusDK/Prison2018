@@ -27,6 +27,11 @@ void Player::Update()
 	x += direction * speed;
 }
 
+void Player::UpdateTwo()
+{
+	y += direction * speed;
+}
+
 void Player::Render()
 {
 	glPushMatrix(); //Lægger en matrise på stakken, således kun denne manipuleres
@@ -36,8 +41,8 @@ void Player::Render()
 	glVertex3f(x, y, z);
 	for (int i = 0; i <= 385; i++)
 	{
-		glVertex3f(x + (0.060f * cos(i * (2.0f * 3.14159) / 385)),
-			y + (0.1f * sin(i * (2.0f * 3.14159) / 385)), 0);
+		glVertex3f(x + (0.050f * cos(i * (2.0f * 3.14159) / 385)),
+			y + (0.090f * sin(i * (2.0f * 3.14159) / 385)), 0);
 	}
 	glEnd();
 	glPopMatrix(); // Fjerner matrisen på stakken (dvs. nulstiller til udgangspunkt)

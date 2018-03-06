@@ -14,6 +14,7 @@ GameWorld::~GameWorld()
 {
 	delete gameObject;
 	delete player;
+	delete grid;
 }
 
 void GameWorld::GameLoop()
@@ -41,7 +42,13 @@ void GameWorld::GameLogic()
 	}
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
-
+		player->direction = 1;
+		player->UpdateTwo();
+	}
+	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+	{
+		player->direction = -1;
+		player->UpdateTwo();
 	}
 }
 
