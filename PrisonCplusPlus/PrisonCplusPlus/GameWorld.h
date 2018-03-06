@@ -6,6 +6,7 @@ class GameWorld
 {
 private:
 	GLFWwindow * window;
+	GameObject * tmpGO;
 public:
 	GameWorld(GLFWwindow * windowContext);
 	~GameWorld();

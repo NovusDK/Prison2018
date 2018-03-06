@@ -21,5 +21,6 @@ public:
 	void virtual Update();
 	void virtual Render();
 	int direction;
+	
 };
 

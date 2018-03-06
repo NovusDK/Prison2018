@@ -28,7 +28,8 @@ GameObject::~GameObject()
 
 void GameObject::Update()
 {
-	x += speed;
+	x += direction * 0.1;
+
 }
 
 void GameObject::Render()
