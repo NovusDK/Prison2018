@@ -18,25 +18,38 @@ void Grid::Render()
 	glPushMatrix();
 	//glMatrixMode(GL_PROJECTION);
 	//glLoadIdentity();
-	glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
+
 	glColor3f(0.0, 0.0, 0.0);
-	int xsize = 0, ysize = 0;
+	
 	for (x = 0; x < 10; x++)
 	{
-		xsize = 0;
-		for (y = 0; y < 10; y++)
-		{
-			glBegin(GL_POLYGON);
 
-			glVertex3f(-50.0 + xsize, -50.0 + ysize, 0.0);
-			glVertex3f(-40.0 + xsize, -50.0 + ysize, 0.0);
-			glVertex3f(-40.0 + xsize, -40.0 + ysize, 0.0);
-			glVertex3f(-50.0 + xsize, -40.0 + ysize, 0.0);
+			glBegin(GL_LINES);
+
+			glVertex3f(0.0, 0.0, 0.0); // The bottom left corner  
+			//glVertex3f(0.0, 9, 0.0); // The top left corner  
+			//glVertex3f(9, 9, 0.0); // The top right corner  
+			glVertex3f(9, 0.0, 0.0); // The bottom right corne;
+		
 			glEnd();
-			xsize += 10.0;
-		}
-		ysize += 10.0;
+			
 	}
+	glPopMatrix();
+	RenderField();
+
+	//for (y = 0; y < 10; y++)
+	//{
+
+	//	glBegin(GL_LINE_LOOP);
+
+	//	glVertex3f(0.0, 0.0, 0.0); // The bottom left corner  
+	//	glVertex3f(0.0, 9, 0.0); // The top left corner  
+	//	glVertex3f(9, 9, 0.0); // The top right corner  
+	//	glVertex3f(9, 0.0, 0.0); // The bottom right corne;
+
+	//	glEnd();
+
+	//}
 	glPopMatrix();
 	RenderField();
 }
@@ -54,7 +67,7 @@ void Grid::RenderField()
 		{
 			if (someArray[i][j] != nullptr)
 			{
-				//glTranslatef(i, j, 0);
+				//glTranslatef(i, j, 0.0f);
 				someArray[i][j]->Render();
 			}
 		}
