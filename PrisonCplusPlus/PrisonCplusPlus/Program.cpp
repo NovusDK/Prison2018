@@ -72,7 +72,7 @@ int main()
 	glfwSetFramebufferSizeCallback(window, size_resize_callback); //Sikre at hvis vinduets størrelse ændres ændres viewport også
 
 	gw = new GameWorld(window);
-	gameObject = new GameObject();
+	//gameObject = new GameObject();
 
 
 	while (!glfwWindowShouldClose(window)) // Køre så længe glfw vinduet ikke har fået besked på at lukke (f.eks. tryk på X knappen)
@@ -87,7 +87,7 @@ int main()
 		drawSquare();
 		
 		gw->GameLoop();
-		gameObject->Render();
+		//gameObject->Render();
 		
 
 		/*glBegin(GL_TRIANGLES);
