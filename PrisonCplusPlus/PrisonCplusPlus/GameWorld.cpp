@@ -2,7 +2,7 @@
 #include <GLFW\glfw3.h>
 #include <al.h>
 #include <alc.h>
-#include <alut.h>
+
 
 #define TEST_WAVE_FILE "Media\hitSound.wav"
 using namespace std;
