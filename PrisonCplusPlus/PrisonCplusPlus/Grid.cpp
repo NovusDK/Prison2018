@@ -1,5 +1,10 @@
 #include "Grid.h"
 #include <GLFW\glfw3.h>
+#include <al.h>
+#include <alc.h>
+
+#define sizeX 10
+#define sizeY 10
 
 
 Grid::Grid()
@@ -12,44 +17,41 @@ Grid::~Grid()
 
 void Grid::Render()
 {
+	//glTranslatef(x, y, 0.0f);
 	//glClear(GL_COLOR_BUFFER_BIT);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	glPushMatrix();
 	//glMatrixMode(GL_PROJECTION);
 	//glLoadIdentity();
+	glColor3f(1.0, 0.0, 0.0);
 
-	glColor3f(0.0, 0.0, 0.0);
-	
-	for (x = 0; x < 10; x++)
+	for (x = 0; x < sizeX; x++)
 	{
 
 			glBegin(GL_LINES);
+			//-1.0 + x* (1/ sizeX)
+			glVertex3f(-1.0, -0.5 + x * (1.0 / sizeX), 0.0); // The bottom left corner  
+			glVertex3f(1.0, -0.5 + x * (1.0 / sizeX), 0.0); // The bottom right corne;
 
-			glVertex3f(0.0, 0.0, 0.0); // The bottom left corner  
-			//glVertex3f(0.0, 9, 0.0); // The top left corner  
-			//glVertex3f(9, 9, 0.0); // The top right corner  
-			glVertex3f(9, 0.0, 0.0); // The bottom right corne;
-		
 			glEnd();
 			
 	}
-	glPopMatrix();
-	RenderField();
 
-	//for (y = 0; y < 10; y++)
-	//{
 
-	//	glBegin(GL_LINE_LOOP);
+		
+	for (y = 0; y < sizeY; y++)
+	{
 
-	//	glVertex3f(0.0, 0.0, 0.0); // The bottom left corner  
-	//	glVertex3f(0.0, 9, 0.0); // The top left corner  
-	//	glVertex3f(9, 9, 0.0); // The top right corner  
-	//	glVertex3f(9, 0.0, 0.0); // The bottom right corne;
+		glBegin(GL_LINES);
 
-	//	glEnd();
+		glVertex3f(-0.5 + y * (1.0 / sizeY), -1.0, 0.0); // The bottom left corner   
+		glVertex3f(-0.5 + y * (1.0 / sizeY), 1.0, 0.0); // The bottom right corne;
 
-	//}
+		glEnd();
+
+	}
+	
 	glPopMatrix();
 	RenderField();
 }
@@ -67,9 +69,12 @@ void Grid::RenderField()
 		{
 			if (someArray[i][j] != nullptr)
 			{
-				//glTranslatef(i, j, 0.0f);
+				glPushMatrix();
+				glTranslatef(i * (1.0/sizeX ), j *  (1.0 / sizeY), 0.0f);
 				someArray[i][j]->Render();
+				glPopMatrix();
 			}
+			
 		}
 	}
 }

@@ -1,5 +1,9 @@
 #include "GameWorld.h"
 #include <GLFW\glfw3.h>
+#include <al.h>
+#include <alc.h>
+
+
 
 
 GameWorld::GameWorld(GLFWwindow * windowContext)
@@ -23,6 +27,7 @@ void GameWorld::GameLoop()
 	Render();
 	glfwPollEvents();
 }
+
 
 void GameWorld::GameLogic()
 {
@@ -53,11 +58,15 @@ void GameWorld::GameLogic()
 
 	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
 	{
-		grid->AddGameObject(0, 0, new GameObject());
+		grid->AddGameObject(9, 9, new GameObject());
 	}
 	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
 	{
-		grid->AddGameObject(2, 2, new GameObject());
+		grid->AddGameObject(5, 3, new GameObject());
+	}
+	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
+	{
+		grid->AddGameObject(5, 8, new GameObject());
 	}
 }
 
