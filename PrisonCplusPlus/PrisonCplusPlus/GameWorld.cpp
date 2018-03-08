@@ -104,13 +104,29 @@ void GameWorld::GameLogic()
 		player->UpdateTwo();
 	}
 
-	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
 	{
 		grid->AddGameObject(0, 0, new GameObject());
 	}
+	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
+	{
+		grid->AddGameObject(9, 5, new GameObject());
+	}
 	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
 	{
-		grid->AddGameObject(2, 2, new GameObject());
+		grid->AddGameObject(9, 9, new GameObject());
+	}
+	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
+	{
+		grid->AddGameObject(0, 9, new GameObject());
+	}
+	if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
+	{
+		grid->AddGameObject(9, 0, new GameObject());
+	}
+	if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
+	{
+		grid->AddGameObject(5, 9, new GameObject());
 	}
 }
 

@@ -3,6 +3,8 @@
 #include <iostream>
 #include "GameObject.h"
 #include "GameWorld.h"
+#include <al.h>
+#include <alc.h>
 
 
 GameWorld * gw;
@@ -14,9 +16,11 @@ void size_resize_callback(GLFWwindow* window, int width, int height)
 
 int main()
 {
+
 	glfwInit(); //Initialisering af glfw
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2); //Sætte øvre OpenGl version
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0); //Sætte nedre OpenGl Version
+
 
 
 	GLFWwindow* window = glfwCreateWindow(900, 900, "MyGLFWGLAD1", NULL, NULL);

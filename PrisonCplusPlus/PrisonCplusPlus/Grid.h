@@ -5,7 +5,7 @@ class Grid
 private:
 	float x;
 	float y;
-	float z;
+	//float z;
 	GameObject * someArray[10][10] = { };
 public:
 	Grid();
