@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "Wall.h"
 class Grid
 {
 private:
@@ -13,5 +14,6 @@ public:
 	void Render();
 	void RenderField();
 	void AddGameObject(int x, int y, GameObject * g);
+	void AddWall(int x, int y, Wall * w);
 };
 

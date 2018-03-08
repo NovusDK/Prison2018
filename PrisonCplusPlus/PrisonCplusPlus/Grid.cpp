@@ -55,10 +55,6 @@ void Grid::Render()
 	RenderField();
 }
 
-void Grid::AddGameObject(int x, int y, GameObject * g)
-{
-	someArray[x][y] = g;
-}
 
 void Grid::RenderField()
 {
@@ -76,4 +72,14 @@ void Grid::RenderField()
 			
 		}
 	}
+}
+
+void Grid::AddGameObject(int x, int y, GameObject * g)
+{
+	someArray[x][y] = g;
+}
+
+void Grid::AddWall(int x, int y, Wall * w)
+{
+	someArray[x][y] = w;
 }

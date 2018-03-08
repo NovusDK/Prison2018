@@ -3,8 +3,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Grid.h"
-#include <al.h>
-#include <alc.h>
+#include "Wall.h"
 
 class GameWorld
 {
@@ -13,14 +12,15 @@ private:
 	GameObject * gameObject;
 	Player * player;
 	Grid * grid;
-	ALCdevice * device;
-	ALCcontext * context;
+	Wall * wall;
+	//ALCdevice * device;
+	//ALCcontext * context;
 public:
 	GameWorld(GLFWwindow * windowContext);
 	//GameWorld(ALCdevice * device);
 	~GameWorld();
 	void GameLoop();
-	void audio();
+	//void audio();
 private:
 	void GameLogic();
 	void Render();
