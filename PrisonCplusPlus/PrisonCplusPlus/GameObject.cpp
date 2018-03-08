@@ -29,7 +29,7 @@ void GameObject::Update()
 void GameObject::Render()
 {
 	glPushMatrix(); //Lægger en matrise på stakken, således kun denne manipuleres
-	glTranslatef(x, y, z);
+	//glTranslatef(x, y, z);
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.2f, 0.3f, 0.3f);
 	glVertex3f(-0.05f, 0.0f, 0.0f);

@@ -6,6 +6,7 @@
 #include <al.h>
 #include <alc.h>
 
+
 GameWorld * gw;
 
 void size_resize_callback(GLFWwindow* window, int width, int height)

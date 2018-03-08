@@ -50,8 +50,7 @@ void Grid::Render()
 
 		glEnd();
 
-	}
-	
+	}	
 	glPopMatrix();
 	RenderField();
 }
