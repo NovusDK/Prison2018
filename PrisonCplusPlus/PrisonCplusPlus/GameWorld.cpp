@@ -73,9 +73,10 @@ void GameWorld::GameLoop()
 //		//return;
 //	}
 //
-//	//Load test wav	
+//	//Load test wav
 //	alutLoadWAVFile(TEST_WAVE_FILE, &format, &data, &size, &freq, &loop);
 //}
+
 
 void GameWorld::GameLogic()
 {
