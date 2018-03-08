@@ -1,6 +1,17 @@
 #include "GameWorld.h"
 #include <GLFW\glfw3.h>
+#include <al.h>
+#include <alc.h>
+#include <alut.h>
+using namespace std;
 
+ALCenum error;
+ALuint buffer;
+ALsizei size, freq;
+ALenum format;
+ALvoid *data;
+ALboolean loop = AL_FALSE;
+ALbyte *test;
 
 GameWorld::GameWorld(GLFWwindow * windowContext)
 {
@@ -9,6 +20,21 @@ GameWorld::GameWorld(GLFWwindow * windowContext)
 	player = new Player();
 	grid = new Grid();
 }
+
+//GameWorld::GameWorld(ALCdevice * device)
+//{
+//	device = alcOpenDevice(NULL);
+//	if (!device)
+//	{
+//		//Error handling
+//	}
+//	context = alcCreateContext(device, NULL);
+//	if (!alcMakeContextCurrent(context))
+//	{
+//		//Failed to make context current
+//		//Test for errors here by using alGetError();
+//	}
+//}
 
 GameWorld::~GameWorld()
 {
@@ -23,6 +49,32 @@ void GameWorld::GameLoop()
 	Render();
 	glfwPollEvents();
 }
+
+//void GameWorld::audio()
+//{
+//	//Initialization
+//	device = alcOpenDevice(NULL);
+//
+//	if (!device)
+//	{
+//		context = alcCreateContext(device, NULL);
+//		alcMakeContextCurrent(context);
+//	}
+//
+//	//Generate buffers
+//	alGetError(); //Clear code error
+//
+//	alGenBuffers((ALuint)1, &buffer);
+//	if ((error = alGetError()) != AL_NO_ERROR)
+//	{
+//		DisplayALError("alGenBuffers :", error);
+//		return;
+//	}
+//
+//	//Load test wav	
+//	//ALbyte *b = "test.wav";
+//	alutLoadWAVFile("test.wav", &format, &data, &size, &freq, &loop);
+//}
 
 void GameWorld::GameLogic()
 {

@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "GameWorld.h"
 
+
 GameWorld * gw;
 
 void size_resize_callback(GLFWwindow* window, int width, int height)
@@ -18,8 +19,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0); //Sætte nedre OpenGl Version
 
 
-
-	GLFWwindow* window = glfwCreateWindow(1600, 900, "MyGLFWGLAD1", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(900, 900, "MyGLFWGLAD1", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Kunne ikke oprette OpenGL Vindue" << std::endl;
@@ -28,7 +28,7 @@ int main()
 	}
 	glfwMakeContextCurrent(window); //Sørger for at OpenGL Bruger vinduet som renderings context
 
-	glViewport(0, 0, 1600, 900); //Oprettet en viewport gennem OpenGL kald
+	glViewport(0, 0, 900, 900); //Oprettet en viewport gennem OpenGL kald
 
 	glfwSetFramebufferSizeCallback(window, size_resize_callback); //Sikre at hvis vinduets størrelse ændres ændres viewport også
 
