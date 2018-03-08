@@ -3,6 +3,8 @@
 #include <al.h>
 #include <alc.h>
 #include <alut.h>
+
+#define TEST_WAVE_FILE "Media\hitSound.wav"
 using namespace std;
 
 ALCenum error;
@@ -11,7 +13,7 @@ ALsizei size, freq;
 ALenum format;
 ALvoid *data;
 ALboolean loop = AL_FALSE;
-ALbyte *test;
+
 
 GameWorld::GameWorld(GLFWwindow * windowContext)
 {
@@ -67,13 +69,12 @@ void GameWorld::GameLoop()
 //	alGenBuffers((ALuint)1, &buffer);
 //	if ((error = alGetError()) != AL_NO_ERROR)
 //	{
-//		DisplayALError("alGenBuffers :", error);
-//		return;
+//		//DisplayALError("alGenBuffers :", error);
+//		//return;
 //	}
 //
 //	//Load test wav	
-//	//ALbyte *b = "test.wav";
-//	alutLoadWAVFile("test.wav", &format, &data, &size, &freq, &loop);
+//	alutLoadWAVFile(TEST_WAVE_FILE, &format, &data, &size, &freq, &loop);
 //}
 
 void GameWorld::GameLogic()
