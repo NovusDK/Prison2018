@@ -30,9 +30,9 @@ void Grid::Render()
 	{
 
 			glBegin(GL_LINES);
-			//-1.0 + x* (1/ sizeX)
-			glVertex3f(-1.0, -0.5 + x * (1.0 / sizeX), 0.0); // The bottom left corner  
-			glVertex3f(1.0, -0.5 + x * (1.0 / sizeX), 0.0); // The bottom right corne;
+			
+			glVertex3f(-1.0, 0.0 + x * (1.0 / sizeX), 0.0); // The bottom left corner  
+			glVertex3f(1.0, 0.0 + x * (1.0 / sizeX), 0.0); // The bottom right corne;
 
 			glEnd();
 			
@@ -45,8 +45,8 @@ void Grid::Render()
 
 		glBegin(GL_LINES);
 
-		glVertex3f(-0.5 + y * (1.0 / sizeY), -1.0, 0.0); // The bottom left corner   
-		glVertex3f(-0.5 + y * (1.0 / sizeY), 1.0, 0.0); // The bottom right corne;
+		glVertex3f(0.0 + y * (1.0 / sizeY), -1.0, 0.0); // The bottom left corner   
+		glVertex3f(0.0 + y * (1.0 / sizeY), 1.0, 0.0); // The bottom right corne;
 
 		glEnd();
 
@@ -70,7 +70,7 @@ void Grid::RenderField()
 			if (someArray[i][j] != nullptr)
 			{
 				glPushMatrix();
-				glTranslatef(i * (1.0/sizeX ), j *  (1.0 / sizeY), 0.0f);
+				glTranslatef(i * (1.0/sizeX ), j * (1.0 / sizeY), 0.0f);
 				someArray[i][j]->Render();
 				glPopMatrix();
 			}
