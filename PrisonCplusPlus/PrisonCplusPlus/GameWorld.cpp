@@ -4,15 +4,14 @@
 #include <alc.h>
 
 
-#define TEST_WAVE_FILE "Media\hitSound.wav"
 using namespace std;
 
-ALCenum error;
-ALuint buffer;
-ALsizei size, freq;
-ALenum format;
-ALvoid *data;
-ALboolean loop = AL_FALSE;
+//ALCenum error;
+//ALuint buffer;
+//ALsizei size, freq;
+//ALenum format;
+//ALvoid *data;
+//ALboolean loop = AL_FALSE;
 
 
 GameWorld::GameWorld(GLFWwindow * windowContext)
@@ -21,6 +20,7 @@ GameWorld::GameWorld(GLFWwindow * windowContext)
 	gameObject = new GameObject();
 	player = new Player();
 	grid = new Grid();
+	wall = new Wall();
 }
 
 //GameWorld::GameWorld(ALCdevice * device)
@@ -107,28 +107,33 @@ void GameWorld::GameLogic()
 
 	if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
 	{
-		grid->AddGameObject(0, 0, new GameObject());
+		grid->AddWall(0, 0, new Wall());
 	}
-	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
-	{
-		grid->AddGameObject(9, 5, new GameObject());
-	}
-	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
-	{
-		grid->AddGameObject(9, 9, new GameObject());
-	}
-	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-	{
-		grid->AddGameObject(0, 9, new GameObject());
-	}
-	if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
-	{
-		grid->AddGameObject(9, 0, new GameObject());
-	}
-	if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-	{
-		grid->AddGameObject(5, 9, new GameObject());
-	}
+
+	//if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
+	//{
+	//	grid->AddGameObject(0, 0, new GameObject());
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
+	//{
+	//	grid->AddGameObject(9, 5, new GameObject());
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
+	//{
+	//	grid->AddGameObject(9, 9, new GameObject());
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
+	//{
+	//	grid->AddGameObject(0, 9, new GameObject());
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
+	//{
+	//	grid->AddGameObject(9, 0, new GameObject());
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
+	//{
+	//	grid->AddGameObject(5, 9, new GameObject());
+	//}
 }
 
 void GameWorld::Render()
