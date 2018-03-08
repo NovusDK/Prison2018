@@ -17,11 +17,11 @@ Grid::~Grid()
 
 void Grid::Render()
 {
-	//glTranslatef(x, y, 0.0f);
+	
 	//glClear(GL_COLOR_BUFFER_BIT);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
 	glPushMatrix();
+	glTranslatef(-1.0, -1.0, 0.0f);
 	//glMatrixMode(GL_PROJECTION);
 	//glLoadIdentity();
 	glColor3f(1.0, 0.0, 0.0);
@@ -31,22 +31,19 @@ void Grid::Render()
 
 			glBegin(GL_LINES);
 			
-			glVertex3f(-1.0, 0.0 + x * (1.0 / sizeX), 0.0); // The bottom left corner  
-			glVertex3f(1.0, 0.0 + x * (1.0 / sizeX), 0.0); // The bottom right corne;
+			glVertex3f(-1.0, 0.0 + x * (1.0 / sizeX), 0.0); 
+			glVertex3f(1.0, 0.0 + x * (1.0 / sizeX), 0.0);
 
 			glEnd();
 			
-	}
-
-
-		
+	}	
 	for (y = 0; y < sizeY; y++)
 	{
 
 		glBegin(GL_LINES);
 
-		glVertex3f(0.0 + y * (1.0 / sizeY), -1.0, 0.0); // The bottom left corner   
-		glVertex3f(0.0 + y * (1.0 / sizeY), 1.0, 0.0); // The bottom right corne;
+		glVertex3f(0.0 + y * (1.0 / sizeY), -1.0, 0.0);
+		glVertex3f(0.0 + y * (1.0 / sizeY), 1.0, 0.0); 
 
 		glEnd();
 
@@ -69,7 +66,7 @@ void Grid::RenderField()
 			if (someArray[i][j] != nullptr)
 			{
 				glPushMatrix();
-				glTranslatef(i * (1.0/sizeX ), j * (1.0 / sizeY), 0.0f);
+				glTranslatef(i * (-1.0 / sizeX ), j * (-1.0 / sizeY), 0.0f);
 				someArray[i][j]->Render();
 				glPopMatrix();
 			}
