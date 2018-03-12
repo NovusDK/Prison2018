@@ -4,8 +4,9 @@
 #include "GameObject.h"
 #include "GameWorld.h"
 #include <Framework.h>
+#include <Windows.h>
 
-#define TEST_WAVE_FILE "Footsteps.wav"
+#define TEST_WAVE_FILE "Furious_Freak.wav"
 
 GameWorld * gw;
 
@@ -16,7 +17,7 @@ void size_resize_callback(GLFWwindow* window, int width, int height)
 
 int main()
 {
-
+	
 	glfwInit(); //Initialisering af glfw
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2); //Sætte øvre OpenGl version
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0); //Sætte nedre OpenGl Version
@@ -78,6 +79,7 @@ int main()
 
 		//glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		//glClear(GL_COLOR_BUFFER_BIT); //Nul stiller baggrunden til baggrundsfarven
+		FreeConsole();
 
 		gw->GameLoop();
 
